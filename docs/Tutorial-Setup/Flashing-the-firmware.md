@@ -4,13 +4,21 @@ sidebar_position: 20
 # Flashing the firmware
 
 ## Install Rotorflight Configurator
-Start by downloading and installing the latest Rotorflight Configurator release. This walk-through uses Windows, but it should also work on Linux or macOS.
+Start by [downloading and installing](https://github.com/rotorflight/rotorflight-configurator/releases) the latest Rotorflight Configurator release. This walk-through uses Windows, but it should also work on Linux or macOS.
+
+* rotorflight-configurator-X.Y.Z.x86_64.rpm            Linux RPM installer
+* rotorflight-configurator-installer_X.Y.Z_win32.exe   Windows 32 Bits installer
+* rotorflight-configurator-installer_X.Y.Z_win64.exe   Windows 32 Bits installer
+* rotorflight-configurator_X.Y.Z_amd64.deb             Linux Debian installer
+* rotorflight-configurator_X.Y.Z_linux64.zip           Linux 64 bits installer
+* rotorflight-configurator_X.Y.Z_macOS.dmg             MacOS installer
 
 ## Install Drivers
-On Windows, install the STM USB Drivers from the links on the Rotorflight Configurator page.
+On Windows, install the [STM USB Drivers here](https://www.st.com/en/development-tools/stsw-stm32102.html) or from the links on the Rotorflight Configurator page.
+On Linux and Macos you do not need to install anything.
 
 ## Back up Betaflight Config
-Rotorflight is based on Betaflight and uses the Betaflight configuration as its base. You should make a copy of the configuration that the flight controller (FC) shipped with. Back up the Betaflight configuration as shown in Back up and restore.
+Rotorflight is based on Betaflight and uses the Betaflight configuration as its base. You should make a copy of the configuration that the flight controller (FC) shipped with. Back up the Betaflight configuration as shown in [Back up and restore](https://www.rotorflight.org/docs/Tutorial-Setup/Backup-and-restore).
 
 ## Flash Firmware to FC
 Connect the FC to your computer with an USB data cable. Now you are ready to install the Rotorflight firmware to your FC. There are five different versions of the firmware, each version targeting a specific microprocessor: F405, F411, F7X2, F745, and H743. Your FC must use one of those processors. Besides firmware, each FC has it's own configuration. The configuration specifies the FC board, e.g. what pads are used for what.
@@ -47,7 +55,13 @@ Click [Apply Custom Defaults] from the popup. The FC will now reboot.
 
 ![Flashing](./img/flash-4.png)
 
-### Step 5.
+### Step 5 (Optional).
+This step is optional if you are using a Rotorflight ready commercial board like 
+* FlyDragon F722 V2 (built-in ELRS receiver)
+* FLYWING Heli 405 3D
+* MATEKSYS G474-HELI
+After an update, for the board above, proper default are applied.
+
 Configure the pin remapping. There are two options for this:
 
 If you have one of the boards listed in the Boards and Configuration Files section of the wiki (e.g. Matek F722 wpx) you can use a pre-configured custom defaults config file. These files have already had pins remapped for servos and motors. Choose a pin configuration (e.g. (a), (b) etc) that suits your helicopter best and either the Motorized Tail (MT) or Servo Tail (ST) as required. These files can be downloaded from the Rotorflight-targets repo. See the Custom Defaults page for more info. If this is your first Rotorflight controller or have no experience remapping pins then we recommend this method. If you have a different board and wish to use this method please ask on the Discord discussion and we can build one.
@@ -55,7 +69,7 @@ If you have one of the boards listed in the Boards and Configuration Files secti
 The second option is to manually re-map your pins to add your servos and motors, or by using the Custom defaults remapping spreadsheet.
 
 ## Troubleshooting
-'Initiating reboot to bootloader' hangs
+### 'Initiating reboot to bootloader' hangs
 If you're on Windows and it hangs while displaying Initiating reboot to bootloader, you'll need to install the proper driver for the STM32 BOOTLOADER device.
 
 Make sure the device STM32 BOOTLOADER is installed and showing up in the Device Manager, either under Other Devices or under Universal Serial Bus devices. Select View > Show Hidden Devices in order to see all installed devices.
@@ -68,10 +82,10 @@ Start Zadig (see download link on the Welcome tab in the Configurator), select O
 
 ![Flashing](./img/flash-5.png)
 
-Error 'Rebooting device to bootloader: FAILED'
+### Error 'Rebooting device to bootloader: FAILED'
 If you receive the error Rebooting device to bootloader: FAILED then you will need to manually place the FC into bootloader mode. Do this by holding down the BOOT button while connecting it to your computer.
 
-Help... that didn't work. Its bricked!
+### Help... that didn't work. Its bricked!
 Ok, so after rebooting you are no longer able to connect to the FC via USB. This can happen if your configuration file is not correct (USB becomes unallocated) or if you have loaded the incorrect firmware for the processor type. Don't worry: the bootloader can't be bricked, it's in ROM. You can always reload the firmware via the DFU (device firmware update) mode. Most flight controllers have a 'boot' button or pins which are used to enter DFU mode. Generally you can just enter DFU mode by pushing the button or bridging the boot pins as you plug the USB in (while the Rotorflight Configurator is open).
 
 ![Flashing](./img/flash-6.png)
