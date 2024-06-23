@@ -18,7 +18,7 @@ If the helicopter is inverted when rescue is activated, this mode will flip it t
 ## Beginner or Safe Mode
 This mode is designed for beginners and restricts the helicopter's movement to make it easier to control. It typically limits the tilt angles and may provide self-leveling assistance.
 
-Panic Recovery Mode
+## Panic Recovery Mode
 When the pilot loses control or orientation, this mode can be triggered to quickly stabilize the helicopter and prevent a crash. It usually combines features of leveling and gaining altitude.
 
 ## Stability Augmentation System (SAS)
