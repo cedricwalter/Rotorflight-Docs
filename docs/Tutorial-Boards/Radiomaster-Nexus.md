@@ -33,12 +33,27 @@ Then in configurator you enable these two
 
 # Setup
 
-14 min setup
-https://www.youtube.com/watch?v=WxYWBPVDbu0
+## Radiomaster Tx16s setup
+use 
+* https://github.com/bob01/etx-templates
+* https://github.com/offer-shmuely/rf2-touch-edgetx
 
-https://www.youtube.com/live/VcOebsyBGqM
-https://www.youtube.com/watch?v=YdfZgF5WKuQ
+## Rotorflight setup
+Long
+* https://www.youtube.com/live/VcOebsyBGqM
+* https://www.youtube.com/watch?v=YdfZgF5WKuQ
 
+Fast
+* 14 min setup https://www.youtube.com/watch?v=WxYWBPVDbu0
+
+# FAQs
+
+## Motors are not spooling
+Does it spool if you use override? YES look at the arming flag to locate issue (https://www.rotorflight.org/docs/Tutorial-Setup/Status#arming), NO! you may need to calibrate ESC
+
+## Throttle position is higher than the min arm position
+1. Lower the throttle in your TX
+2. If you can't make your throttle go lower on your TX you can increase the throttle channel value for Armin on the receiver tab
 
 
 ## Tips
