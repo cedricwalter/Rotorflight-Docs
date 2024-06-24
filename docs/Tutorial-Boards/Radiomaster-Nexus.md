@@ -31,6 +31,16 @@ resource SERIAL_TX 2 A03
 
 Then in configurator you enable these two
 
+# Setup
+
+14 min setup
+https://www.youtube.com/watch?v=WxYWBPVDbu0
+
+https://www.youtube.com/live/VcOebsyBGqM
+https://www.youtube.com/watch?v=YdfZgF5WKuQ
+
+
+
 ## Tips
 - A, B, C are nearly identical expansion ports
 - You can use the S.BUS port for ESC telemetry, if you are not using it for S.BUS or F.Port. You can use the S.BUS port for F.Port, and use the DSM port for ESC telemetry Or you can use any of the expansion ports for ESC telemetry
